@@ -1,5 +1,5 @@
 data "azurerm_resource_group" "main" {
-  name     = var.resource-group-name
+  name = var.resource-group-name
 }
 
 data "azurerm_kubernetes_cluster" "aks" {
@@ -18,6 +18,6 @@ resource "null_resource" "get_creds" {
 resource "null_resource" "kubectl_apply" {
   depends_on = [data.azurerm_kubernetes_cluster.aks]
   provisioner "local-exec" {
-    command = "kubectl create ns new"
+    command = "kubectl create ns ${data.namespace-name}"
   }
 }

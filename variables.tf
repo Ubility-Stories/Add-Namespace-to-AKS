@@ -18,12 +18,15 @@ variable "TENANT_ID" {
 }
 
 variable "resource-group-name" {
-    type = string
-    default = "test"
-  
+  type    = string
+  default = ""
+
 }
 variable "aks-name" {
-    type = string
-    default = "deployment"
-  
+  type    = string
+  default = ""
+}
+
+variable "namespace-name" {
+  type = string
 }
